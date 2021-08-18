@@ -11,17 +11,21 @@ def run_bot(client):
     async def on_message(message):
         if message.author == client.user:
             return
-        if "what is " in message.content:
-            words=message.content.split("what is ")  
-            await message.channel.send("Noun : " + dictionary.meaning(words[1])["Noun"][0].replace("(",""))
+        if "$kb" in message.content:
+            command = message.content.split("$kb ")[1]
+            if "what is " in command:
+                words=message.content.split("what is ") 
+                noun = dictionary.meaning(words[1])["Noun"][0].replace("(","") 
+                await message.channel.send("Noun : "+ noun)
+                                        
 
-        if message.content.startswith('$kb'):
-            await message.channel.send("Hi Ho")
+            if command.startswith('hi'):
+                await message.channel.send("Hi Ho")
 
-        if message.content.startswith('$music'):
-            await message.channel.send("What music, use rythm")
+            if command.startswith('music'):
+                await message.channel.send("What music, use rythm")
 
-        if message.content.startswith('$time'):
-            now = datetime.now()
-            current_time = now.strftime("%H:%M:%S")
-            await message.channel.send(current_time)
+            if command.startswith('time'):
+                now = datetime.now()
+                current_time = now.strftime("%H:%M:%S")
+                await message.channel.send(current_time)
