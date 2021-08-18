@@ -1,6 +1,7 @@
 import discord
 import os
 from datetime import datetime
+from PyDictionary import PyDictionary as dictionary
 
 client = discord.Client()
 
@@ -12,6 +13,9 @@ async def on_ready():
 async def on_message(message):
   if message.author == client.user:
     return
+  if "what is " in message.content:
+    words=message.content.split("what is ")
+    await message.channel.send(dictionary.meaning(words[1]))
 
   if message.content.startswith('$kb'):
     await message.channel.send("Hi Ho")
