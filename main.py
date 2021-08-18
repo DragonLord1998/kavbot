@@ -16,4 +16,4 @@ async def on_ready():
 run_bot(client)
 
 client.run(os.environ.get("TOKEN"))
-#client.run("ODc3NDU5NzcyNjE2NjIyMTMw.YRy8GA.wkgrn_-dV-zQgRXGkoWJy02dEWE")
+
