@@ -6,14 +6,15 @@ from discord import client
 
 
 def run_bot(client):
-    pre_commands = {'what is ':' Returns Definitions from the dictionary',
-                    'hi':' Returns Hi Ho',
-                    'music':' Try it'
-                    ,'time':' Returns current time'}
+    pre_commands = {'what is ':' : Returns Definitions from the dictionary',
+                    'hi':' : Returns Hi Ho',
+                    'music':' : Try it'
+                    ,'time':' : Returns current time'}
     @client.event    
     async def on_message(message):
         if message.author == client.user:
             return
+            
         if "$kb" in message.content:
             command = message.content.split("$kb ")[1]
             if "what is " in command:
@@ -36,7 +37,7 @@ def run_bot(client):
                 current_time = now.strftime("%H:%M:%S")
                 await message.channel.send(current_time)
                 return None
-                
+
             elif command.startswith('join'):
 
                 if (ctx.author.voice):
