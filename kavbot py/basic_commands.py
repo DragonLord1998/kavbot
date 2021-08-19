@@ -1,4 +1,5 @@
 
+import json
 import discord
 from datetime import datetime
 from PyDictionary import PyDictionary as dictionary
@@ -10,6 +11,7 @@ def run_bot(client):
                     'hi':' : Returns Hi Ho',
                     'music':' : Try it'
                     ,'time':' : Returns current time'}
+    pre_commands = json.dumps(pre_commands, indent = 4)
     @client.event    
     async def on_message(message):
         if message.author == client.user:
@@ -51,6 +53,6 @@ def run_bot(client):
             else:
                 await message.channel.send("The command "+ command + " not available")
                 await message.channel.send("Commands that are avalaible: ")
-               # await message.channel.send(pre_commands.replace("{","").replace("}",""))
-                for i in pre_commands:
-                   await message.channel.send(i+pre_commands[i])
+                await message.channel.send(pre_commands)
+          #      for i in pre_commands:
+           #        await message.channel.send(i+pre_commands[i])
