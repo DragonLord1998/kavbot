@@ -51,7 +51,6 @@ def run_bot(client):
             else:
                 await message.channel.send("The command "+ command + " not available")
                 await message.channel.send("Commands that are avalaible: ")
-                await message.channel.send(pre_commands.replace("{","").replace("}",""))
-
-             #   for i in pre_commands:
-             #      await message.channel.send(i+pre_commands[i])
+               # await message.channel.send(pre_commands.replace("{","").replace("}",""))
+                for i in pre_commands:
+                   await message.channel.send(i+pre_commands[i])
