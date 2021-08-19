@@ -6,10 +6,10 @@ from discord import client
 
 
 def run_bot(client):
-    pre_commands = {'what is ':'Definitions from the dictionary',
-                    'hi':'Return  Hi Ho',
-                    'music':'Try it'
-                    ,'time':'Return current time'}
+    pre_commands = {'what is ':' Returns Definitions from the dictionary',
+                    'hi':' Returns Hi Ho',
+                    'music':' Try it'
+                    ,'time':' Returns current time'}
     @client.event    
     async def on_message(message):
         if message.author == client.user:
