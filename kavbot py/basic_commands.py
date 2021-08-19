@@ -13,7 +13,7 @@ def run_bot(client):
                     'music':'  Try it',
                     'time':'  Returns current time'
                    }
-    pre_commands = json.dumps(pre_commands, indent = 4)
+    pre_commands = json.dumps(pre_commands,)
     @client.event    
     async def on_message(message):
         if message.author == client.user:
