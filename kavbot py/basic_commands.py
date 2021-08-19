@@ -7,7 +7,8 @@ from discord import client
 
 
 def run_bot(client):
-    pre_commands = {'what is <term>':'  Returns Definitions of term from the dictionary',
+    pre_commands = {
+                    'what is <term>':'  Returns Definitions of term from the dictionary',
                     'hi':'  Returns Hi Ho',
                     'music':'  Try it',
                     'time':'  Returns current time'
@@ -54,7 +55,7 @@ def run_bot(client):
             else:
                 await message.channel.send("The command "+ command + " not available")
                 await message.channel.send("Commands that are avalaible: ")
-                ans = str(pre_commands.replace("{","").replace("}","").replace('"',"").replace(",",""))
+                ans = str(pre_commands).replace("{","").replace("}","").replace('"',"").replace(",","")
                 await message.channel.send(ans)
           #      for i in pre_commands:
           #        await message.channel.send(i+pre_commands[i])
