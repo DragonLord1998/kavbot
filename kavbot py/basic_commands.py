@@ -6,17 +6,10 @@ from discord import client
 
 
 def run_bot(client):
-<<<<<<< HEAD
-    pre_commands = {'what is ':'Definitions from the dictionary',
-                    'hi':'Returns  Hi Ho',
-                    'music':'Try it'
-                    ,'time':'Returns current time'}
-=======
     pre_commands = {'what is ':' Returns Definitions from the dictionary',
                     'hi':' Returns Hi Ho',
                     'music':' Try it'
                     ,'time':' Returns current time'}
->>>>>>> 7466d550a3cc0bcf30dd48e3cc33d59a40a8bf6f
     @client.event    
     async def on_message(message):
         if message.author == client.user:
@@ -46,6 +39,8 @@ def run_bot(client):
                     await channel.connect()
                 else :
                     await ctx.send( "Please join a voice channel" )
+            if command.startswith('get message'):
+                await message.channel.send(message)
 
             else:
                 await message.channel.send("The command "+ command + " not available")
