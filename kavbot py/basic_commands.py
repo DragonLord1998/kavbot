@@ -7,10 +7,10 @@ from discord import client
 
 
 def run_bot(client):
-    pre_commands = {'what is ':' : Returns Definitions from the dictionary',
-                    'hi':' : Returns Hi Ho',
-                    'music':' : Try it'
-                    ,'time':' : Returns current time'}
+    pre_commands = {'what is ':'  Returns Definitions from the dictionary',
+                    'hi':'  Returns Hi Ho',
+                    'music':'  Try it'
+                    ,'time':'  Returns current time'}
     pre_commands = json.dumps(pre_commands, indent = 4)
     @client.event    
     async def on_message(message):
@@ -53,6 +53,6 @@ def run_bot(client):
             else:
                 await message.channel.send("The command "+ command + " not available")
                 await message.channel.send("Commands that are avalaible: ")
-                await message.channel.send(pre_commands)
+                await message.channel.send(pre_commands.replace("{","").replace("}","").replace('"',""))
           #      for i in pre_commands:
-           #        await message.channel.send(i+pre_commands[i])
+          #        await message.channel.send(i+pre_commands[i])
