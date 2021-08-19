@@ -30,4 +30,6 @@ def run_bot(client):
                 current_time = now.strftime("%H:%M:%S")
                 await message.channel.send(current_time)
             else:
-                await message.channel.send("Commands avalaible",pre_commands)
+                await message.channel.send("Commands avalaible")
+                for i in pre_commands:
+                    await message.channel.send(i)
