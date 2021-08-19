@@ -7,10 +7,10 @@ from discord import client
 
 
 def run_bot(client):
-    pre_commands = {' what is <term>':'  Returns Definitions of term from the dictionary',
-                    '             hi':'  Returns Hi Ho',
-                    '          music':'  Try it',
-                    '           time':'  Returns current time'
+    pre_commands = {'what is <term>':'  Returns Definitions of term from the dictionary',
+                    'hi':'  Returns Hi Ho',
+                    'music':'  Try it',
+                    'time':'  Returns current time'
                    }
     pre_commands = json.dumps(pre_commands, indent = 4)
     @client.event    
