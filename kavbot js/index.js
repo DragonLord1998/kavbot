@@ -1,18 +1,16 @@
-
-const { Client, Intents } = require('discord.js');
+const { Client, Intents } = require("discord.js");
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
-client.on('ready', () => {
+client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.on('interactionCreate', async interaction => {
-  if (!interaction.isCommand()) return;
+client.on("message", gotMessage);
 
-  if (interaction.commandName === 'hi') {
-    console.log("Got command");
-    await interaction.reply('Pong!');
+function gotMessage(msg) {
+  if (msg.content === "ping") {
+    msg.reply("pong");
   }
-});
+}
 
-client.login('ODc3NDU5NzcyNjE2NjIyMTMw.YRy8GA.wkgrn_-dV-zQgRXGkoWJy02dEWE');
+client.login("ODc3NDU5NzcyNjE2NjIyMTMw.YRy8GA.wkgrn_-dV-zQgRXGkoWJy02dEWE");
