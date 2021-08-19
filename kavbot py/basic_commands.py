@@ -31,3 +31,5 @@ def run_bot(client):
                 await message.channel.send(current_time)
             else:
                 await message.channel.send("Commands avalaible")
+                for i in pre_commands:
+                    await message.channel.send(i)
