@@ -20,18 +20,23 @@ def run_bot(client):
                 words=message.content.split("what is ") 
                 noun = dictionary.meaning(words[1])["Noun"][0].replace("(","") 
                 await message.channel.send("Noun : "+ noun)
+                return None
                                         
 
             elif command.startswith('hi'):
                 await message.channel.send("Hi Ho")
+                return None
 
             elif command.startswith('music'):
                 await message.channel.send("What music, use rythm")
+                return None
 
             elif command.startswith('time'):
                 now = datetime.now()
                 current_time = now.strftime("%H:%M:%S")
                 await message.channel.send(current_time)
+                return None
+                
             elif command.startswith('join'):
 
                 if (ctx.author.voice):
