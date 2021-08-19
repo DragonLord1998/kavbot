@@ -9,7 +9,8 @@ from discord.ext import commands
 
 intents = discord.Intents.default()
 intents.members = True
-client = commands.Bot(command_prefix="$kb",intents = intents)
+client = discord.Client()
+bot = commands.Bot(command_prefix="$kb",intents = intents)
 
 @client.event
 async def on_ready():
@@ -18,15 +19,15 @@ async def on_ready():
 
 run_bot(client)
 
-@client.command(pass_context= True)
+@bot.command(pass_context= True)
 async def join(ctx):
   if (ctx.author.voice):
     channel=ctx.message.author.voice.channel
     await channel.connect()
   else :
     await ctx.send( "Please join a voice channel" )
-    
-@client.command(pass_context = True)
+
+@bot.command(pass_context = True)
 async def leave(ctx):
   if (ctx.voice_client):
     await ctx.guild.voice_client.disconnect()
