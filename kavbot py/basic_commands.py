@@ -6,7 +6,10 @@ from discord import client
 
 
 def run_bot(client):
-    pre_commands = ['what is ','hi','music','time']
+    pre_commands = {'what is ':'Definitions from the dictionary',
+                    'hi':'Return  Hi Ho',
+                    'music':'Try it'
+                    ,'time':'Return current time'}
     @client.event    
     async def on_message(message):
         if message.author == client.user:
@@ -30,6 +33,7 @@ def run_bot(client):
                 current_time = now.strftime("%H:%M:%S")
                 await message.channel.send(current_time)
             else:
-                await message.channel.send("Commands avalaible")
+                await message.channel.send("The command "+ command + " not available")
+                await message.channel.send("Commands that are avalaible")
                 for i in pre_commands:
-                    await message.channel.send(i)
+                    await message.channel.send(i+pre_commands[i])
