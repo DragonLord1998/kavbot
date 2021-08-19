@@ -57,5 +57,4 @@ def run_bot(client):
                 await message.channel.send("Commands that are avalaible: ")
                 ans = str(pre_commands).replace("{","").replace("}","").replace('"',"").replace(",","")
                 await message.channel.send(ans)
-          #      for i in pre_commands:
-          #        await message.channel.send(i+pre_commands[i])
+         
