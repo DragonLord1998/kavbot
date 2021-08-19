@@ -6,7 +6,7 @@ from discord import client
 
 
 def run_bot(client):
-    
+    pre_commands = ['what is ','hi','music','time']
     @client.event    
     async def on_message(message):
         if message.author == client.user:
@@ -19,13 +19,15 @@ def run_bot(client):
                 await message.channel.send("Noun : "+ noun)
                                         
 
-            if command.startswith('hi'):
+            elif command.startswith('hi'):
                 await message.channel.send("Hi Ho")
 
-            if command.startswith('music'):
+            elif command.startswith('music'):
                 await message.channel.send("What music, use rythm")
 
-            if command.startswith('time'):
+            elif command.startswith('time'):
                 now = datetime.now()
                 current_time = now.strftime("%H:%M:%S")
                 await message.channel.send(current_time)
+            else:
+                await message.channel.send("Commands avalaible",pre_commands)
