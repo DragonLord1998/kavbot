@@ -7,9 +7,9 @@ from discord import client
 
 def run_bot(client):
     pre_commands = {'what is ':'Definitions from the dictionary',
-                    'hi':'Return  Hi Ho',
+                    'hi':'Returns  Hi Ho',
                     'music':'Try it'
-                    ,'time':'Return current time'}
+                    ,'time':'Returns current time'}
     @client.event    
     async def on_message(message):
         if message.author == client.user:
@@ -32,6 +32,14 @@ def run_bot(client):
                 now = datetime.now()
                 current_time = now.strftime("%H:%M:%S")
                 await message.channel.send(current_time)
+            elif command.startswith('join'):
+
+                if (ctx.author.voice):
+                    channel=ctx.message.author.voice.channel
+                    await channel.connect()
+                else :
+                    await ctx.send( "Please join a voice channel" )
+
             else:
                 await message.channel.send("The command "+ command + " not available")
                 await message.channel.send("Commands that are avalaible")
