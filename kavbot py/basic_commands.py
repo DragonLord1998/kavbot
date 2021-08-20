@@ -1,4 +1,5 @@
 
+import asyncio
 import json
 import discord
 from datetime import datetime
@@ -57,4 +58,4 @@ def run_bot(client):
                 await message.channel.send("Commands that are avalaible: ")
                 ans = str(pre_commands).replace("{","").replace("}","").replace('"',"").replace(",","")
                 await message.channel.send(ans)
-         
+        bot.process_commands(message) 

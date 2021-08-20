@@ -1,4 +1,5 @@
 #main
+import asyncio
 import discord
 import os
 from datetime import datetime
