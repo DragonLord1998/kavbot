@@ -1,6 +1,7 @@
 from PyDictionary import PyDictionary as dictionary
 import discord
 from datetime import datetime
+from discord import message
 from discord.ext import commands
 from commands import commands_kav 
 
@@ -54,6 +55,7 @@ def commands_loop(client,bot):
     @bot.command(pass_context = True)
     async def join(ctx):
         print("tHIS WORKS")
+        await message.channel.send( "command runs" )
 
 
 
