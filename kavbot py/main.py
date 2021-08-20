@@ -69,7 +69,7 @@ async def on_message(message):
             await message.channel.send("Commands that are avalaible: ")
             ans = str(pre_commands).replace("{","").replace("}","").replace('"',"").replace(",","")
             await message.channel.send(ans)
-    bot.process_commands(message) 
+    await bot.process_commands(message) 
 
 
 
