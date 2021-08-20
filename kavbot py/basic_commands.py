@@ -1,25 +1,16 @@
-
-import asyncio
-import json
+from PyDictionary import PyDictionary as dictionary
 import discord
 from datetime import datetime
-from PyDictionary import PyDictionary as dictionary
-from discord import client
+from discord.ext import commands
+from commands import commands_kav 
 
 
-def run_bot(client):
-    pre_commands = {
-                    'what is <term>':'  Returns Definitions of term from the dictionary',
-                    'hi':'  Returns Hi Ho',
-                    'music':'  Try it',
-                    'time':'  Returns current time'
-                   }
-    pre_commands = json.dumps(pre_commands, indent=0)
+def commands(client,bot):
+    pre_commands = commands_kav()
     @client.event    
     async def on_message(message):
         if message.author == client.user:
-            return
-            
+            return     
         if "$kb" in message.content:
             command = message.content.split("$kb ")[1]
             if "what is " in command:
@@ -58,4 +49,6 @@ def run_bot(client):
                 await message.channel.send("Commands that are avalaible: ")
                 ans = str(pre_commands).replace("{","").replace("}","").replace('"',"").replace(",","")
                 await message.channel.send(ans)
-        bot.process_commands(message) 
+        await bot.process_commands(message) 
+
+
