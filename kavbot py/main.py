@@ -5,6 +5,7 @@ import discord
 import os
 from datetime import datetime
 from PyDictionary import PyDictionary as dictionary
+from discord import channel
 from basic_commands import commands_loop
 from discord.ext import commands
 
@@ -18,8 +19,12 @@ bot = commands.Bot(command_prefix="$kb",intents = intents)
 async def on_ready():
   print("We have logged in as {0.user}".format(client))
 
-
-commands_loop(client,bot)
+@bot.event
+async def on_message(message):
+    # do some extra stuff here
+    await message.channel.send("This works - bot event")
+    await bot.process_commands(message)
+#commands_loop(client,bot)
 
 
 client.run(os.environ.get("TOKEN"))
