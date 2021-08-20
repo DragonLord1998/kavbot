@@ -5,7 +5,7 @@ from discord.ext import commands
 from commands import commands_kav 
 
 
-def commands(client,bot):
+def commands_loop(client,bot):
     pre_commands = commands_kav()
     @client.event    
     async def on_message(message):

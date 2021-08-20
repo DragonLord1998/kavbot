@@ -5,7 +5,7 @@ import discord
 import os
 from datetime import datetime
 from PyDictionary import PyDictionary as dictionary
-from basic_commands import commands
+from basic_commands import commands_loop
 from discord.ext import commands
 
 intents = discord.Intents.default()
@@ -19,7 +19,7 @@ async def on_ready():
   print("We have logged in as {0.user}".format(client))
 
 
-commands(client,bot)
+commands_loop(client,bot)
 
 
 client.run(os.environ.get("TOKEN"))
