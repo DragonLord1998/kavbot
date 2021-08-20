@@ -19,12 +19,8 @@ bot = commands.Bot(command_prefix="$kb",intents = intents)
 async def on_ready():
   print("We have logged in as {0.user}".format(client))
 
-@bot.event
-async def on_message(message):
-    # do some extra stuff here
-    await message.channel.send("This works - bot event")
-    await bot.process_commands(message)
-#commands_loop(client,bot)
+
+commands_loop(client,bot)
 
 
 client.run(os.environ.get("TOKEN"))
