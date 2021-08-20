@@ -26,7 +26,7 @@ pre_commands = {
                     'time':'  Returns current time'
                    }
 pre_commands = json.dumps(pre_commands, indent=0)
-@bot.event    
+@client.event    
 async def on_message(message):
     if message.author == client.user:
         return
