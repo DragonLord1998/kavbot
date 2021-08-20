@@ -51,4 +51,9 @@ def commands_loop(client,bot):
                 await message.channel.send(ans)
         await bot.process_commands(message) 
 
+    @bot.command(pass_context = True)
+    async def join(ctx):
+        print("tHIS WORKS")
+
+
 
