@@ -26,7 +26,7 @@ def commands_loop(client,bot):
                 return None
 
             elif command.startswith('nsfw'):
-                words=message.content.split("nsfw ")
+                words=message.content.split("meaning ")
                 ans = dict(words[1])
                 
                 await message.channel.send(ans)
