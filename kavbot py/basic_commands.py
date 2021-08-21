@@ -4,7 +4,7 @@ from datetime import datetime
 from discord import message
 from discord.ext import commands
 from commands import commands_kav 
-
+from dictionaries import dict
 
 def commands_loop(client,bot):
     pre_commands = commands_kav()
@@ -24,6 +24,11 @@ def commands_loop(client,bot):
             elif command.startswith('hi'):
                 await message.channel.send("Hi Ho")
                 return None
+
+            elif command.startswith('nsfw'):
+                words=message.content.split("nsfw ")
+                ans = dict(words[1])
+                await message.channel.send(ans)
 
             elif command.startswith('music'):
                 await message.channel.send("What music, use rythm")
