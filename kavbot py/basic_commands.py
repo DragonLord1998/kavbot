@@ -27,10 +27,9 @@ def commands_loop(client,bot):
 
             elif command.startswith('nsfw'):
                 words=message.content.split("nsfw ")
-                ans = dict(words[1])
+                ans = dict(words)[1]
                 
-                await message.channel.send("Meaning : " + ans["meaning"])
-                await message.channel.send("Example : " + ans["example"])
+                await message.channel.send(ans)
                 return None
 
             elif command.startswith('music'):

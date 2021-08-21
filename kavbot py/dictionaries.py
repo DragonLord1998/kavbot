@@ -6,8 +6,9 @@ def dict(word):
     if res.status_code == 200:
         val= res.json()
         valdict ={
-            'meaning': (val[0]['meanings'][0]['definitions'][0]['definition']),
+            'meaning': (val[0]['meanings'][0]['definitions'][0]["definition"]),
             'example':  (val[0]['meanings'][0]['definitions'][0]['example'])
         }
+        
         return(valdict)
-
+print(dict("car"))
