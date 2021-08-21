@@ -6,6 +6,7 @@ from discord.ext import commands
 from commands import commands_kav 
 from dictionaries import dict
 from qotd import quotes
+from weather import weather
 
 def commands_loop(client,bot):
     pre_commands = commands_kav()
@@ -42,6 +43,12 @@ def commands_loop(client,bot):
 
             elif command.startswith('music'):
                 await message.channel.send("What music, use rythm")
+                return None
+            
+            elif command.startswith('weather'):
+                words=message.content.split("weather")
+                climate = weather(words[1])
+                await message.channel.send(climate)
                 return None
 
             elif command.startswith('time'):
