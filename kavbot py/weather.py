@@ -10,8 +10,10 @@ def weather(city):
             'windspd':val['data'][0]['wind_spd'],
             'name':val['data'][0]['city_name']
         }
+        print(weather_data)
     
     else:
         print("nope")
     return weather_data
 
+weather("delhi")
