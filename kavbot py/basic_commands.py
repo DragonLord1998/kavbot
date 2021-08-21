@@ -29,8 +29,8 @@ def commands_loop(client,bot):
                 words=message.content.split("meaning")
                 ans = dict(words[1])
                 
-                await message.channel.send("Meaning " +ans['meaning'])
-                await message.channel.send("Example " +ans['example'])
+                await message.channel.send("Meaning: " +ans['meaning'])
+                await message.channel.send("Example: " +ans['example'])
 
                 return None
 
