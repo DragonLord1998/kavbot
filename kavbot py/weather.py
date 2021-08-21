@@ -1,7 +1,7 @@
 import requests
 
 def weather(city):
-    res = requests.get("http://api.weatherbit.io/v2.0/current?city="+city+"=a91d911ef70844758f29735346af06e4&include=minutely")
+    res = requests.get("http://api.weatherbit.io/v2.0/current?city="+city"&key=a91d911ef70844758f29735346af06e4&include=minutely")
     if res.status_code == 200:
         val= res.json()
         weather_data={
