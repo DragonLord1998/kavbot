@@ -5,6 +5,7 @@ from discord import message
 from discord.ext import commands
 from commands import commands_kav 
 from dictionaries import dict
+from qotd import quotes
 
 def commands_loop(client,bot):
     pre_commands = commands_kav()
@@ -24,6 +25,11 @@ def commands_loop(client,bot):
             elif command.startswith('hi'):
                 await message.channel.send("Hi Ho")
                 return None
+            elif command.startswith('quote'):
+                quote = quotes()
+                await message.channel.send(quote)
+                return None
+                
 
             elif command.startswith('meaning'):
                 words=message.content.split("meaning")
