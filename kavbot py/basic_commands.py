@@ -48,7 +48,7 @@ def commands_loop(client,bot):
             elif command.startswith('weather'):
                 words=message.content.split('weather')
                 climate = weather(words[1])
-               # await message.channel.send("Current Temperature of "+ climate['city_name'] + "is :"+ climate["temp"])
+                await message.channel.send("Current Temperature of "+ climate['city_name'] + "is :"+ climate["temp"])
                 await message.channel.send(climate)
                 return None
 
