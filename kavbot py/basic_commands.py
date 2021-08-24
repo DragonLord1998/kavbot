@@ -7,6 +7,7 @@ from commands import commands_kav
 from dictionaries import dict
 from qotd import quotes
 from weather import weather
+from ai import smartai
 
 def commands_loop(client,bot):
     pre_commands = commands_kav()
@@ -56,6 +57,12 @@ def commands_loop(client,bot):
                 now = datetime.now()
                 current_time = now.strftime("%H:%M:%S")
                 await message.channel.send(current_time)
+                return None
+            elif command.startswith('ai'):
+                ques = message.channel.split('ai')[1]
+                ans = smartai(ques)
+                await message.channel.send(ans)
+
                 return None
 
             elif command.startswith('join'):
