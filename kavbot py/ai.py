@@ -10,7 +10,7 @@ def smartai(ques):
 
 
     if __name__ == "__main__":
-        ai.api_key = "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"
+        ai.api_key = "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"
 
         completion = ai.Completion()
 
@@ -26,4 +26,4 @@ def smartai(ques):
        
         return chat(ques,start_chat_log).split(",")[0] #.split(".")[0]
 
-
+print(smartai("How are you?"))
