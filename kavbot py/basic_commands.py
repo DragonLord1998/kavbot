@@ -58,8 +58,8 @@ def commands_loop(client,bot):
                 current_time = now.strftime("%H:%M:%S")
                 await message.channel.send(current_time)
                 return None
-            elif command.startswith('ai'):
-                ques = message.channel.split('ai')[1]
+            elif command.startswith('oai'):
+                ques = message.channel.split('oai')[1]
                 await message.channel.send("This command ran so far")
                 ans = smartai(ques)
                 await message.channel.send("This command ran the next step so far")
