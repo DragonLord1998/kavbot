@@ -26,4 +26,3 @@ def smartai(ques):
        
         return chat(ques,start_chat_log).split(",")[0] #.split(".")[0]
 
-print(smartai("How are you?"))
