@@ -5,12 +5,12 @@ def smartai(ques):
             chat_log = start_chat_log
         prompt = f"{chat_log}Human: {question}\nAI:"
         response = completion.create(prompt = prompt, engine =  "davinci", temperature = 0.85,top_p=1, frequency_penalty=0, 
-        presence_penalty=0.7, best_of=2,max_tokens=100,stop = "\nHuman: ")
+        presence_penalty=0.7, best_of=1,max_tokens=100,stop = "\nHuman: ")
         return response.choices[0].text
 
 
     if __name__ == "__main__":
-        ai.api_key = "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"
+        ai.api_key = "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"
 
         completion = ai.Completion()
 
@@ -24,4 +24,6 @@ def smartai(ques):
         
         
        
-        return chat(ques,start_chat_log).split(",")[0]
+        return chat(ques,start_chat_log).split(",")[0] #.split(".")[0]
+
+print(smartai("How are you?"))
