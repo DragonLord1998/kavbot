@@ -60,7 +60,10 @@ def commands_loop(client,bot):
                 return None
             elif command.startswith('ai'):
                 ques = message.channel.split('ai')[1]
+                await message.channel.send("This command ran so far")
                 ans = smartai(ques)
+                await message.channel.send("This command ran the next step so far")
+
                 await message.channel.send(ans)
 
                 return None
