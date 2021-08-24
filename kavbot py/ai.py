@@ -1,5 +1,5 @@
 import openai as ai
-def smartai(question):
+def smartai(ques):
     def chat(question,chat_log = None) -> str:
         if(chat_log == None):
             chat_log = start_chat_log
@@ -8,10 +8,9 @@ def smartai(question):
         presence_penalty=0.7, best_of=2,max_tokens=100,stop = "\nHuman: ")
         return response.choices[0].text
 
-    
 
     if __name__ == "__main__":
-        ai.api_key = "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"
+        ai.api_key = "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"
 
         completion = ai.Completion()
 
@@ -21,25 +20,8 @@ def smartai(question):
         AI: I am fine, thanks for asking. 
         """
 
-        train = False
-        if(train == "True"):
-            print("\n(To stop the training enter stop in the qestion)\n")
-            while(True):
-                question = input("Question: ")
-                if question == "stop":
-                    break
-                answer = input("Answer: ")
-                start_chat_log = modify_start_message(start_chat_log,question,answer)
-                print("\n")
-
+        #train = False
         
-        print("\nEnter the questions to openai (to quit type \"stop\")")
-        while True:
-            
-            if question == "stop":
-                break
-            
-            ans = chat(question,start_chat_log)
-            
-            return ans.split(".")[0]
-            
+        
+       
+        return chat(ques,start_chat_log).split(",")[0]
