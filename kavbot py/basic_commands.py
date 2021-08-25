@@ -63,7 +63,7 @@ def commands_loop(client,bot):
                 print(ques[1])
                 ans = smartai(ques[1])
                 print(ans)
-                await message.channel.send(ans)
+                await message.channel.send("*cb ai "+ans)
 
                
               

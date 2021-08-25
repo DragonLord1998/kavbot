@@ -16,7 +16,7 @@ def smartai(ques):
     completion = ai.Completion()
 
     start_chat_log = """Human: Hello, I am Human.
-    AI: Hello, human I am openai gpt3.
+    AI: Hello, human I am KavBot.
     Human: How are you?
     AI: I am fine, thanks for asking. 
     """
