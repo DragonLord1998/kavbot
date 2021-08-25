@@ -13,8 +13,7 @@ def commands_loop(client,bot):
     pre_commands = commands_kav()
     @client.event    
     async def on_message(message):
-        if message.author == client.user:
-            return     
+           
         if "$kb" in message.content:
             command = message.content.split("$kb ")[1]
             if "what is " in command:
