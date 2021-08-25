@@ -1,3 +1,4 @@
+import os
 import openai as ai
 def smartai(ques):
     def chat(question,chat_log = None) -> str:
@@ -10,8 +11,7 @@ def smartai(ques):
 
 
     if __name__ == "__main__":
-        ai.api_key = "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"
-
+        ai.api_key = os.environ.get("AITOKEN")
         completion = ai.Completion()
 
         start_chat_log = """Human: Hello, I am Human.
@@ -26,3 +26,4 @@ def smartai(ques):
        
         return chat(ques,start_chat_log).split(",")[0] #.split(".")[0]
 
+print(smartai("How are you?"))
