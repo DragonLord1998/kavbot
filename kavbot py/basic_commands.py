@@ -59,12 +59,15 @@ def commands_loop(client,bot):
                 await message.channel.send(current_time)
                 return None
             elif command.startswith('oai'):
-                ques = message.channel.split('oai')[1]
-                await message.channel.send("This command ran so far" + ques)
-               
-
+                ques = message.content.split('oai')
+                print(ques[1])
+                ans = smartai(ques[1])
+                print(ans)
                 await message.channel.send(ans)
 
+               
+              
+                
                 return None
 
             elif command.startswith('join'):

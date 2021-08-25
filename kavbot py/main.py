@@ -24,6 +24,7 @@ async def on_ready():
 commands_loop(client,bot)
 
 
+client.run('ODc3NDU5NzcyNjE2NjIyMTMw.YRy8GA.5vix4LQMsXdkjNAwb_Q6HNDF--8')
 
-client.run(os.environ.get("TOKEN"))
+#client.run(os.environ.get("TOKEN"))
 

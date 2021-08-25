@@ -10,21 +10,22 @@ def smartai(ques):
         return response.choices[0].text
 
 
-    if __name__ == "__main__":
-        ai.api_key = os.environ.get("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")
-      # ai.api_key = "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"
-        completion = ai.Completion()
+   
+    ai.api_key = os.environ.get("AITOKEN")
+    
+    completion = ai.Completion()
 
-        start_chat_log = """Human: Hello, I am Human.
-        AI: Hello, human I am openai gpt3.
-        Human: How are you?
-        AI: I am fine, thanks for asking. 
-        """
+    start_chat_log = """Human: Hello, I am Human.
+    AI: Hello, human I am openai gpt3.
+    Human: How are you?
+    AI: I am fine, thanks for asking. 
+    """
 
         #train = False
         
         
        
-        return chat(ques,start_chat_log).split(",")[0].split(".")[0]
+    return chat(ques,start_chat_log).split(",")[0].split(".")[0]
 
-print(smartai("How are you?"))
+#print(smartai("How old are you?"))
+
