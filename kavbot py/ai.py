@@ -11,7 +11,8 @@ def smartai(ques):
 
 
     if __name__ == "__main__":
-        ai.api_key = os.environ.get("AITOKEN")
+        ai.api_key = os.environ.get("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")
+      # ai.api_key = "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"
         completion = ai.Completion()
 
         start_chat_log = """Human: Hello, I am Human.
