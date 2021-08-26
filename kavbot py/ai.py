@@ -8,7 +8,7 @@ def smartai(ques):
                              Human: How are you?
                              AI: I am fine, thanks for asking. 
                              """ 
-            start_chat_log = start_chat_log + ques
+            start_chat_log = start_chat_log + question
             chat_log = start_chat_log 
         prompt = f"{chat_log}Human: {question}\nAI:"
         response = completion.create(prompt = prompt, engine =  "davinci", temperature = 0.85,top_p=1, frequency_penalty=0, 
