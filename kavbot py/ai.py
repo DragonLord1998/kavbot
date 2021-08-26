@@ -19,7 +19,7 @@ def smartai(ques):
             statements = question.split('\a')
             que = statements[0]
             ans = statements[1]
-            chat_log += f"Human: {que}\nAI: {ans}\n"
+            start_chat_log += f"Human: {que}\nAI: {ans}\n"
         
 
         
