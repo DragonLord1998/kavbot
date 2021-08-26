@@ -11,7 +11,7 @@ from ai import smartai
 
 def commands_loop(client,bot):
     pre_commands = commands_kav()
-    @client.event    
+    @bot.event    
     async def on_message(message):
            
         if "$kb" in message.content:
@@ -63,10 +63,6 @@ def commands_loop(client,bot):
                 ans = smartai(ques[1])
                 print(ans)
                 await message.channel.send(ans)
-
-               
-              
-                
                 return None
 
             elif command.startswith('join'):
