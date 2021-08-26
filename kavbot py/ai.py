@@ -2,11 +2,13 @@ import os
 import openai as ai
 def smartai(ques):
     def chat(question,chat_log = None) -> str:
-        start_chat_log = """Human: Hello, I am Human.
-    AI: Hello, human I am KavBot.
-    Human: How are you?
-    AI: I am fine, thanks for asking. 
-    """ 
+        start_chat_log = """
+        Human: Hello, I am Human.
+        AI: Hello, human I am KavBot.
+        Human: How are you?
+        AI: I am fine, thanks for asking.
+        Human: My favourite song is aces high 
+        """ 
         start_chat_log = start_chat_log + question
         if(chat_log == None):
             
