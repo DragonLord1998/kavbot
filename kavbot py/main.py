@@ -12,7 +12,8 @@ from dictionaries import dict
 intents = discord.Intents.default()
 intents.members = True
 client = discord.Client()
-bot = commands.Bot(command_prefix="$kb",intents = intents)
+
+bot = commands.Bot(command_prefix="$kb ",intents = intents)
 
 
 
@@ -22,6 +23,5 @@ async def on_ready():
 
 
 commands_loop(client,bot)
-
 client.run(os.environ.get("TOKEN"))
 
