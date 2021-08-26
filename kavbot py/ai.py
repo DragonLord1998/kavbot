@@ -8,12 +8,13 @@ def smartai(ques):
         Human: How are you?
         AI: I am fine, thanks for asking.
         Human: My favourite song is aces high 
+        AI: Okay I will remember that.
+        Human: what is my favourite song?
+        AI: Aces High.
         """ 
         start_chat_log = start_chat_log + question
         if(chat_log == None):
-            
             chat_log = start_chat_log 
-        
         prompt = f"{chat_log}Human: {question}\nAI:"
         response = completion.create(prompt = prompt, engine =  "davinci", temperature = 0.85,top_p=1, frequency_penalty=0, 
         presence_penalty=0.7, best_of=1,max_tokens=100,stop = "\nHuman: ")
